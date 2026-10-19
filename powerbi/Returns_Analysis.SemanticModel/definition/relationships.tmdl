@@ -1,0 +1,23 @@
+relationship cb559bc8-c3d3-5b59-bdc1-3d4dced995c2
+	fromColumn: OrderLines.invoice_date
+	toColumn: Date.Date
+
+relationship 636cbc20-7952-547f-96cf-f39551af5146
+	fromColumn: OrderLines.stock_code
+	toColumn: Products.stock_code
+
+relationship c19cc712-dbf6-5208-97f7-fa6298abaa2c
+	fromColumn: OrderLines.customer_id
+	toColumn: Customers.customer_id
+
+relationship d6d02670-c659-597d-8dce-a31d3a6202c5
+	fromColumn: OrderLines.country
+	toColumn: Countries.country
+
+relationship 08c3e339-70d0-5076-a561-272d9eede504
+	fromColumn: DeliveryCharges.invoice_date
+	toColumn: Date.Date
+
+relationship a6a98a5e-4a4f-5deb-9e77-66fcb4d5df3e
+	fromColumn: DeliveryCharges.country
+	toColumn: Countries.country

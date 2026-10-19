@@ -1,0 +1,83 @@
+table Date
+	lineageTag: 9b4bb0eb-ccc5-5825-a1ca-36279fecbf22
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: dd-mmm-yyyy
+		lineageTag: 3bee04d4-0548-5346-b068-1e8c2193d3f6
+		summarizeBy: none
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		lineageTag: 083d8065-0a48-517b-b612-81390d683733
+		summarizeBy: none
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Start'
+		dataType: dateTime
+		formatString: mmm yyyy
+		lineageTag: 16bc8e1c-35f7-557e-ad5e-4432e94d63d4
+		summarizeBy: none
+		sourceColumn: [Month Start]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: 5ccd3235-055d-5514-b204-aad38e49f575
+		summarizeBy: none
+		sourceColumn: [Month]
+		sortByColumn: 'Month Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		dataType: int64
+		isHidden
+		lineageTag: 3a5a7faf-a413-522c-8c0a-4963791fad41
+		summarizeBy: none
+		sourceColumn: [Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Year'
+		dataType: string
+		lineageTag: bfea8a43-6d1a-5e83-ac38-b3b240de65ae
+		summarizeBy: none
+		sourceColumn: [Month Year]
+		sortByColumn: 'Month Index'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Index'
+		dataType: int64
+		isHidden
+		lineageTag: 97950f2c-f949-5162-80c7-ac26d9913033
+		summarizeBy: none
+		sourceColumn: [Month Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = calculated
+		mode: import
+		source =
+				VAR _base = CALENDAR ( DATE ( 2009, 12, 1 ), DATE ( 2011, 12, 31 ) )
+				RETURN
+				    ADDCOLUMNS (
+				        _base,
+				        "Year", YEAR ( [Date] ),
+				        "Month Start", DATE ( YEAR ( [Date] ), MONTH ( [Date] ), 1 ),
+				        "Month", FORMAT ( [Date], "mmm" ),
+				        "Month Number", MONTH ( [Date] ),
+				        "Month Year", FORMAT ( [Date], "mmm yyyy" ),
+				        "Month Index", YEAR ( [Date] ) * 12 + MONTH ( [Date] )
+				    )
+
+	annotation PBI_ResultType = Table

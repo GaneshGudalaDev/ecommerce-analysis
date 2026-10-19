@@ -1,0 +1,106 @@
+table _Measures
+	lineageTag: b582f3ce-9fd6-5634-b599-dc61df992f28
+
+	/// Value of everything sold, before returns
+	measure 'Gross Sales' = CALCULATE ( SUM ( OrderLines[line_value] ), OrderLines[line_type] = "Sale" )
+		formatString: £#,0
+		displayFolder: 2 Sales
+		lineageTag: 393142d4-48e5-52e8-9968-eff7f00d1f87
+
+	/// Value credited back to customers (made positive) = cost of returns
+	measure 'Returned Value' = - CALCULATE ( SUM ( OrderLines[line_value] ), OrderLines[line_type] = "Return" )
+		formatString: £#,0
+		displayFolder: 1 Returns
+		lineageTag: 2f52325b-2400-5de4-85bf-ac36a0bae0ea
+
+	/// Returned value / gross sales value
+	measure 'Return Rate %' = DIVIDE ( [Returned Value], [Gross Sales] )
+		formatString: 0.0%
+		displayFolder: 1 Returns
+		lineageTag: ca9a3d6e-0419-5ab9-aed4-287e5b8b90d9
+
+	measure 'Units Returned' = - CALCULATE ( SUM ( OrderLines[quantity] ), OrderLines[line_type] = "Return" )
+		formatString: #,0
+		displayFolder: 1 Returns
+		lineageTag: 14a858ab-0e55-55b8-863c-124a54fb4481
+
+	/// Number of return invoices (invoice numbers starting with C)
+	measure 'Credit Notes' = CALCULATE ( DISTINCTCOUNT ( OrderLines[invoice_no] ), OrderLines[line_type] = "Return" )
+		formatString: #,0
+		displayFolder: 1 Returns
+		lineageTag: 1feb4b33-0810-58b1-9bf6-41471e50d865
+
+	/// Sales minus returns
+	measure 'Net Sales' = SUM ( OrderLines[line_value] )
+		formatString: £#,0
+		displayFolder: 2 Sales
+		lineageTag: 9892fca0-5f58-5277-99e5-053a1edc05a5
+
+	measure 'Orders' = CALCULATE ( DISTINCTCOUNT ( OrderLines[invoice_no] ), OrderLines[line_type] = "Sale" )
+		formatString: #,0
+		displayFolder: 2 Sales
+		lineageTag: dd24b723-c6a8-5455-a928-b982d3ea0e55
+
+	measure 'Average Order Value' = DIVIDE ( [Gross Sales], [Orders] )
+		formatString: £#,0
+		displayFolder: 2 Sales
+		lineageTag: d8129fb8-9a18-5d6b-bdad-abf6c331f3c5
+
+	/// Known customers with at least one line in the selection
+	measure 'Customers' = CALCULATE ( DISTINCTCOUNT ( OrderLines[customer_id] ), OrderLines[customer_id] <> "Unknown" )
+		formatString: #,0
+		displayFolder: 3 Customers
+		lineageTag: 0fd29c53-4778-5ac9-b121-81d3ed7f1f4d
+
+	measure 'Customers Who Returned' = CALCULATE ( [Customers], OrderLines[line_type] = "Return" )
+		formatString: #,0
+		displayFolder: 3 Customers
+		lineageTag: 36036fd3-a496-5087-a7ae-9cf82e225e11
+
+	measure '% Customers Who Returned' = DIVIDE ( [Customers Who Returned], [Customers] )
+		formatString: 0.0%
+		displayFolder: 3 Customers
+		lineageTag: 3d71320c-59a0-5b12-bb33-1bfd116ee2d3
+
+	/// Known customers with 2 or more orders / all known customers
+	measure 'Repeat Customer %' =
+			VAR _repeat =
+			    COUNTROWS (
+			        FILTER (
+			            VALUES ( OrderLines[customer_id] ),
+			            OrderLines[customer_id] <> "Unknown" && [Orders] >= 2
+			        )
+			    )
+			RETURN
+			    DIVIDE ( _repeat, [Customers] )
+		formatString: 0.0%
+		displayFolder: 3 Customers
+		lineageTag: cd70f0d8-979e-5560-b2f1-5322bcee903a
+
+	/// Postage and carriage charged on invoices
+	measure 'Postage Charged' = CALCULATE ( SUM ( DeliveryCharges[line_value] ), DeliveryCharges[line_type] = "Sale" )
+		formatString: £#,0
+		displayFolder: 4 Delivery
+		lineageTag: 21b9009a-fa82-549f-8209-97619f6e33f5
+
+	/// Postage charged / value of goods sold (use by region or month, not by product)
+	measure 'Postage % of Goods' = DIVIDE ( [Postage Charged], [Gross Sales] )
+		formatString: 0.0%
+		displayFolder: 4 Delivery
+		lineageTag: 282f43b3-3e20-530a-865e-ab40b0da9216
+
+	column Value
+		dataType: int64
+		isHidden
+		lineageTag: c01d2deb-21e4-5615-9e14-03400a122c9d
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = calculated
+		mode: import
+		source =
+				ROW ( "Value", 0 )
+
+	annotation PBI_ResultType = Table

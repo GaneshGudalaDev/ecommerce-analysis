@@ -1,0 +1,264 @@
+priority,keyword,category
+1,CHRISTMAS,Christmas & Seasonal
+1,XMAS,Christmas & Seasonal
+1,ADVENT,Christmas & Seasonal
+1,SANTA,Christmas & Seasonal
+1,REINDEER,Christmas & Seasonal
+1,SNOWFLAKE,Christmas & Seasonal
+1,BAUBLE,Christmas & Seasonal
+1,EASTER,Christmas & Seasonal
+1,HALLOWEEN,Christmas & Seasonal
+2,CANDLE,Candles & Lighting
+2,CANDLES,Candles & Lighting
+2,T-LIGHT,Candles & Lighting
+2,T-LIGHTS,Candles & Lighting
+2,TEALIGHT,Candles & Lighting
+2,LANTERN,Candles & Lighting
+2,LIGHT,Candles & Lighting
+2,LIGHTS,Candles & Lighting
+2,LAMP,Candles & Lighting
+3,NECKLACE,Jewellery & Accessories
+3,BRACELET,Jewellery & Accessories
+3,EARRINGS,Jewellery & Accessories
+3,RING,Jewellery & Accessories
+3,BROOCH,Jewellery & Accessories
+3,HAIR,Jewellery & Accessories
+3,BEAD,Jewellery & Accessories
+3,CHARM,Jewellery & Accessories
+3,DIAMANTE,Jewellery & Accessories
+3,UMBRELLA,Jewellery & Accessories
+3,PURSE,Jewellery & Accessories
+3,WALLET,Jewellery & Accessories
+3,KEYRING,Jewellery & Accessories
+3,KEY-RING,Jewellery & Accessories
+3,SCARF,Jewellery & Accessories
+3,GLOVES,Jewellery & Accessories
+4,MUG,Kitchen & Dining
+4,MUGS,Kitchen & Dining
+4,CUP,Kitchen & Dining
+4,CUPS,Kitchen & Dining
+4,PLATE,Kitchen & Dining
+4,PLATES,Kitchen & Dining
+4,BOWL,Kitchen & Dining
+4,BOWLS,Kitchen & Dining
+4,TEA,Kitchen & Dining
+4,TEACUP,Kitchen & Dining
+4,TEAPOT,Kitchen & Dining
+4,COFFEE,Kitchen & Dining
+4,CAKE,Kitchen & Dining
+4,CAKES,Kitchen & Dining
+4,CAKESTAND,Kitchen & Dining
+4,LUNCH,Kitchen & Dining
+4,JAR,Kitchen & Dining
+4,BOTTLE,Kitchen & Dining
+4,CUTLERY,Kitchen & Dining
+4,SPOON,Kitchen & Dining
+4,SPOONS,Kitchen & Dining
+4,BAKING,Kitchen & Dining
+4,TRAY,Kitchen & Dining
+4,DISH,Kitchen & Dining
+4,NAPKINS,Kitchen & Dining
+4,JUG,Kitchen & Dining
+4,EGG,Kitchen & Dining
+4,APRON,Kitchen & Dining
+4,OVEN,Kitchen & Dining
+4,KITCHEN,Kitchen & Dining
+4,RECIPE,Kitchen & Dining
+4,PANTRY,Kitchen & Dining
+4,TUMBLER,Kitchen & Dining
+4,GLASS,Kitchen & Dining
+4,CASES,Kitchen & Dining
+4,TINS,Kitchen & Dining
+4,BEAKER,Kitchen & Dining
+4,COASTER,Kitchen & Dining
+4,COASTERS,Kitchen & Dining
+4,PLACEMATS,Kitchen & Dining
+4,DOILY,Kitchen & Dining
+4,STRAWS,Kitchen & Dining
+4,JELLY,Kitchen & Dining
+4,MOULD,Kitchen & Dining
+4,BREAD,Kitchen & Dining
+4,BISCUIT,Kitchen & Dining
+5,TOY,Toys & Party
+5,TOYS,Toys & Party
+5,GAME,Toys & Party
+5,GAMES,Toys & Party
+5,PARTY,Toys & Party
+5,DOLL,Toys & Party
+5,DOLLY,Toys & Party
+5,PUZZLE,Toys & Party
+5,JIGSAW,Toys & Party
+5,SPACEBOY,Toys & Party
+5,BALLOON,Toys & Party
+5,BALLOONS,Toys & Party
+5,KIT,Toys & Party
+5,CRAYONS,Toys & Party
+5,CHALK,Toys & Party
+5,SKIPPING,Toys & Party
+5,PLAYHOUSE,Toys & Party
+5,KNITTING,Toys & Party
+5,CRAFT,Toys & Party
+5,BINGO,Toys & Party
+5,DOMINOES,Toys & Party
+5,TEDDY,Toys & Party
+5,SOLDIER,Toys & Party
+5,COLOURING,Toys & Party
+5,PAINTING,Toys & Party
+5,MAGIC,Toys & Party
+5,BUBBLES,Toys & Party
+5,CHILDRENS,Toys & Party
+5,KIDS,Toys & Party
+5,BUNNY,Toys & Party
+5,PIGGY,Toys & Party
+6,CARD,Stationery & Gift Wrap
+6,CARDS,Stationery & Gift Wrap
+6,WRAP,Stationery & Gift Wrap
+6,PAPER,Stationery & Gift Wrap
+6,NOTEBOOK,Stationery & Gift Wrap
+6,PEN,Stationery & Gift Wrap
+6,PENS,Stationery & Gift Wrap
+6,PENCIL,Stationery & Gift Wrap
+6,PENCILS,Stationery & Gift Wrap
+6,STICKER,Stationery & Gift Wrap
+6,STICKERS,Stationery & Gift Wrap
+6,RIBBON,Stationery & Gift Wrap
+6,RIBBONS,Stationery & Gift Wrap
+6,TAPE,Stationery & Gift Wrap
+6,ENVELOPE,Stationery & Gift Wrap
+6,ENVELOPES,Stationery & Gift Wrap
+6,MEMO,Stationery & Gift Wrap
+6,CALENDAR,Stationery & Gift Wrap
+6,BOOK,Stationery & Gift Wrap
+6,DIARY,Stationery & Gift Wrap
+6,ERASER,Stationery & Gift Wrap
+6,TAGS,Stationery & Gift Wrap
+6,TISSUES,Stationery & Gift Wrap
+6,TISSUE,Stationery & Gift Wrap
+6,STATIONERY,Stationery & Gift Wrap
+6,RULER,Stationery & Gift Wrap
+6,STAMP,Stationery & Gift Wrap
+6,CONFETTI,Stationery & Gift Wrap
+7,BAG,Bags & Storage
+7,BAGS,Bags & Storage
+7,BASKET,Bags & Storage
+7,BOX,Bags & Storage
+7,BOXES,Bags & Storage
+7,STORAGE,Bags & Storage
+7,HAMPER,Bags & Storage
+7,CASE,Bags & Storage
+7,DRAWER,Bags & Storage
+7,DRAWERS,Bags & Storage
+7,CRATE,Bags & Storage
+7,TOTE,Bags & Storage
+7,SHOPPER,Bags & Storage
+7,POUCH,Bags & Storage
+7,TIN,Bags & Storage
+7,CABINET,Bags & Storage
+7,CHEST,Bags & Storage
+7,TRUNK,Bags & Storage
+7,RUCKSACK,Bags & Storage
+7,BACKPACK,Bags & Storage
+8,GARDEN,Garden & Outdoor
+8,PLANT,Garden & Outdoor
+8,PLANTER,Garden & Outdoor
+8,POT,Garden & Outdoor
+8,POTS,Garden & Outdoor
+8,WATERING,Garden & Outdoor
+8,BIRD,Garden & Outdoor
+8,BIRDHOUSE,Garden & Outdoor
+8,PICNIC,Garden & Outdoor
+8,PARASOL,Garden & Outdoor
+8,FLAG,Garden & Outdoor
+8,WINDMILL,Garden & Outdoor
+8,FEEDER,Garden & Outdoor
+8,HEN,Garden & Outdoor
+8,THERMOMETER,Garden & Outdoor
+8,WINDCHIME,Garden & Outdoor
+8,SEEDS,Garden & Outdoor
+9,FRAME,Home Decor & Textiles
+9,CLOCK,Home Decor & Textiles
+9,SIGN,Home Decor & Textiles
+9,CUSHION,Home Decor & Textiles
+9,DOORMAT,Home Decor & Textiles
+9,MIRROR,Home Decor & Textiles
+9,ORNAMENT,Home Decor & Textiles
+9,HOOK,Home Decor & Textiles
+9,HOOKS,Home Decor & Textiles
+9,DECORATION,Home Decor & Textiles
+9,WALL,Home Decor & Textiles
+9,HANGING,Home Decor & Textiles
+9,GARLAND,Home Decor & Textiles
+9,BUNTING,Home Decor & Textiles
+9,PLAQUE,Home Decor & Textiles
+9,VASE,Home Decor & Textiles
+9,CHALKBOARD,Home Decor & Textiles
+9,TILE,Home Decor & Textiles
+9,DOORSTOP,Home Decor & Textiles
+9,WREATH,Home Decor & Textiles
+9,BELL,Home Decor & Textiles
+9,TOWEL,Home Decor & Textiles
+9,FLANNEL,Home Decor & Textiles
+9,THROW,Home Decor & Textiles
+9,BLANKET,Home Decor & Textiles
+9,QUILT,Home Decor & Textiles
+9,COVER,Home Decor & Textiles
+9,DOOR,Home Decor & Textiles
+9,KNOB,Home Decor & Textiles
+9,CURTAIN,Home Decor & Textiles
+9,SOAP,Home Decor & Textiles
+9,BATH,Home Decor & Textiles
+9,MAGNET,Home Decor & Textiles
+9,MAGNETS,Home Decor & Textiles
+9,HEART,Home Decor & Textiles
+9,STAR,Home Decor & Textiles
+9,BUTTERFLY,Home Decor & Textiles
+9,PHOTO,Home Decor & Textiles
+9,PICTURE,Home Decor & Textiles
+9,FLOWER,Home Decor & Textiles
+9,FLOWERS,Home Decor & Textiles
+9,CHAIR,Home Decor & Textiles
+9,TABLE,Home Decor & Textiles
+9,STAND,Home Decor & Textiles
+9,BLACKBOARD,Home Decor & Textiles
+9,LETTERS,Home Decor & Textiles
+9,NUMBER,Home Decor & Textiles
+9,DECOUPAGE,Home Decor & Textiles
+9,HOTTIE,Home Decor & Textiles
+9,PAPERWEIGHT,Home Decor & Textiles
+9,INCENSE,Home Decor & Textiles
+9,OIL,Home Decor & Textiles
+9,FRAGRANCE,Home Decor & Textiles
+2,NIGHTLIGHT,Candles & Lighting
+2,TORCH,Candles & Lighting
+3,WARMER,Jewellery & Accessories
+3,GLOSS,Jewellery & Accessories
+3,PONCHO,Jewellery & Accessories
+3,SOCK,Jewellery & Accessories
+4,JAM,Kitchen & Dining
+4,COOKIE,Kitchen & Dining
+4,CUTTER,Kitchen & Dining
+4,POPCORN,Kitchen & Dining
+4,BREAKFAST,Kitchen & Dining
+5,BLOCK,Toys & Party
+5,PAINT,Toys & Party
+5,CLAY,Toys & Party
+5,LUDO,Toys & Party
+5,SNAKES,Toys & Party
+5,TOPS,Toys & Party
+5,GLIDERS,Toys & Party
+5,FELTCRAFT,Toys & Party
+6,NOTEBOOKS,Stationery & Gift Wrap
+6,MEMOBOARD,Stationery & Gift Wrap
+6,POSTCARD,Stationery & Gift Wrap
+7,BASKETS,Bags & Storage
+7,CRATES,Bags & Storage
+7,CONTAINER,Bags & Storage
+8,HAMMOCK,Garden & Outdoor
+8,GARDENERS,Garden & Outdoor
+9,HOLDER,Home Decor & Textiles
+9,BOARD,Home Decor & Textiles
+9,COAT,Home Decor & Textiles
+9,HANGER,Home Decor & Textiles
+9,PEGS,Home Decor & Textiles
+9,BELLS,Home Decor & Textiles
+9,RACK,Home Decor & Textiles

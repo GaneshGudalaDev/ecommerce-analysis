@@ -1,0 +1,44 @@
+country,country_clean,region,shipping_zone
+United Kingdom,United Kingdom,United Kingdom,Domestic
+Channel Islands,Channel Islands,United Kingdom,Domestic
+EIRE,Ireland,EU,International
+Austria,Austria,EU,International
+Belgium,Belgium,EU,International
+Cyprus,Cyprus,EU,International
+Czech Republic,Czech Republic,EU,International
+Denmark,Denmark,EU,International
+European Community,European Community (unspecified),EU,International
+Finland,Finland,EU,International
+France,France,EU,International
+Germany,Germany,EU,International
+Greece,Greece,EU,International
+Italy,Italy,EU,International
+Lithuania,Lithuania,EU,International
+Malta,Malta,EU,International
+Netherlands,Netherlands,EU,International
+Poland,Poland,EU,International
+Portugal,Portugal,EU,International
+Spain,Spain,EU,International
+Sweden,Sweden,EU,International
+Iceland,Iceland,Europe (non-EU),International
+Norway,Norway,Europe (non-EU),International
+Switzerland,Switzerland,Europe (non-EU),International
+Australia,Australia,Rest of World,International
+Bahrain,Bahrain,Rest of World,International
+Bermuda,Bermuda,Rest of World,International
+Brazil,Brazil,Rest of World,International
+Canada,Canada,Rest of World,International
+Hong Kong,Hong Kong,Rest of World,International
+Israel,Israel,Rest of World,International
+Japan,Japan,Rest of World,International
+Korea,South Korea,Rest of World,International
+Lebanon,Lebanon,Rest of World,International
+Nigeria,Nigeria,Rest of World,International
+RSA,South Africa,Rest of World,International
+Saudi Arabia,Saudi Arabia,Rest of World,International
+Singapore,Singapore,Rest of World,International
+Thailand,Thailand,Rest of World,International
+USA,United States,Rest of World,International
+United Arab Emirates,United Arab Emirates,Rest of World,International
+West Indies,West Indies,Rest of World,International
+Unspecified,Unspecified,Unspecified,Unknown

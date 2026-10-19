@@ -1,0 +1,93 @@
+table OrderLines
+	lineageTag: 4f178b66-2b38-5cf8-a011-a88cb7483d35
+
+	column invoice_no
+		dataType: string
+		lineageTag: 6feb85a5-d2f3-50cc-a29f-d9e1d44f9429
+		summarizeBy: none
+		sourceColumn: invoice_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_date
+		dataType: dateTime
+		formatString: dd-mmm-yyyy
+		lineageTag: f0598609-042c-5010-ac62-0930e06c00e6
+		summarizeBy: none
+		sourceColumn: invoice_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_type
+		dataType: string
+		lineageTag: b584d745-a548-5956-bb3d-22c223a42a7b
+		summarizeBy: none
+		sourceColumn: line_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column stock_code
+		dataType: string
+		isHidden
+		lineageTag: 9f086854-9647-58f1-8740-e2c860ffdab5
+		summarizeBy: none
+		sourceColumn: stock_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: #,0
+		lineageTag: 40da933d-92dd-57cd-9349-5d33f3105077
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_price
+		dataType: decimal
+		formatString: £#,0.00
+		lineageTag: de13dd3c-7f35-5529-91a4-5689864b48cc
+		summarizeBy: sum
+		sourceColumn: unit_price
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_value
+		dataType: decimal
+		formatString: £#,0.00
+		lineageTag: 4d4885b9-ddf5-548a-9f31-93170e8c88cf
+		summarizeBy: sum
+		sourceColumn: line_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 0a949f03-b58b-52c5-89fb-b1feabaa7f84
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		isHidden
+		lineageTag: 6ec68061-746c-51a1-b486-61d9772869ca
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition OrderLines = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "order_lines.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Blanks = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, Table.ColumnNames(Promoted)),
+				    Typed = Table.TransformColumnTypes(Blanks, {{"invoice_no", type text}, {"invoice_date", type date}, {"line_type", type text}, {"stock_code", type text}, {"quantity", Int64.Type}, {"unit_price", Currency.Type}, {"line_value", Currency.Type}, {"customer_id", type text}, {"country", type text}}, "en-GB")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,6 @@
+/// Folder that holds the processed CSV files (must end with a backslash)
+expression DataFolder = "C:\Users\riskt\Documents\AnalyticsProjects\ecommerce-sales-customer-analytics\data\processed\" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
+	lineageTag: 594344a2-5f3c-51ab-a408-f1d9beb240e1
+
+	annotation PBI_ResultType = Text
+

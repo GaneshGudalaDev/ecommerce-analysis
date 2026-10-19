@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Data is downloaded and rebuilt locally (too big for GitHub):
+#   python scripts/download_data.py  ->  data/raw/
+#   notebooks/01_data_cleaning.ipynb ->  data/processed/
+data/raw/*
+!data/raw/README.md
+data/processed/*
+!data/processed/cleaning_log.csv
+
+# Power BI local files (data cache + per-user settings)
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+*.pbix.bak
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

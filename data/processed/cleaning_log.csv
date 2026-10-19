@@ -1,0 +1,6 @@
+step,rows_before,rows_after,rows_removed,note
+Remove exact duplicate rows,1067371,1033036,34335,
+"Remove double entries (same invoice, product, quantity, price)",1033036,1033032,4,
+"Keep product lines only (postage saved separately, fees/adjustments removed)",1033032,1027052,5980,"3,788 postage/carriage lines kept in delivery_charges.csv"
+"Remove zero-price lines (stock adjustments, free items)",1027052,1021124,5928,"3,362 were stock write-offs (damaged/lost/missing)"
+Remove two bulk-order mistakes (order + same-day reversal),1021124,1021120,4,

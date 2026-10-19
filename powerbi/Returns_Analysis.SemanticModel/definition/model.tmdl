@@ -1,0 +1,20 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DataFolder", "OrderLines", "Products", "Customers", "Countries", "DeliveryCharges"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+ref table OrderLines
+ref table Products
+ref table Customers
+ref table Countries
+ref table DeliveryCharges
+ref table Date
+ref table _Measures

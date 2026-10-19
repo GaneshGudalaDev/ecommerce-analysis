@@ -1,0 +1,74 @@
+table DeliveryCharges
+	lineageTag: f9b7b433-d99f-5ab2-ad13-b55c112301f6
+
+	column invoice_no
+		dataType: string
+		lineageTag: e840dbe5-d727-5bc5-b7d2-cf6dd497c7f3
+		summarizeBy: none
+		sourceColumn: invoice_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_date
+		dataType: dateTime
+		formatString: dd-mmm-yyyy
+		lineageTag: dc92b590-8cb5-5735-9bbf-cd013da005ab
+		summarizeBy: none
+		sourceColumn: invoice_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_type
+		dataType: string
+		lineageTag: bdeea07e-db66-56c3-8663-dc91a193f43f
+		summarizeBy: none
+		sourceColumn: line_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column charge_type
+		dataType: string
+		lineageTag: 709eec2b-eba2-5043-b0a9-efbb7cc421d4
+		summarizeBy: none
+		sourceColumn: charge_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_value
+		dataType: decimal
+		formatString: £#,0.00
+		lineageTag: fb219105-44c1-53b8-adea-2bdb94eeef9c
+		summarizeBy: sum
+		sourceColumn: line_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: d6e18af2-2594-553b-92ef-1d62b5aafbbb
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		isHidden
+		lineageTag: e5f10d1d-430d-5934-aef1-22eb00ae16bc
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DeliveryCharges = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "delivery_charges.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Blanks = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, Table.ColumnNames(Promoted)),
+				    Typed = Table.TransformColumnTypes(Blanks, {{"invoice_no", type text}, {"invoice_date", type date}, {"line_type", type text}, {"charge_type", type text}, {"line_value", Currency.Type}, {"customer_id", type text}, {"country", type text}}, "en-GB")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
