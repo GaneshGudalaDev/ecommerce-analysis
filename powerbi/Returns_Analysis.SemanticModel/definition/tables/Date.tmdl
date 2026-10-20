@@ -65,6 +65,14 @@ table Date
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Is Full Month'
+		dataType: boolean
+		lineageTag: 70131296-e681-536e-be3d-d3f061dcb8c3
+		summarizeBy: none
+		sourceColumn: [Is Full Month]
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Date = calculated
 		mode: import
 		source =
@@ -77,7 +85,8 @@ table Date
 				        "Month", FORMAT ( [Date], "mmm" ),
 				        "Month Number", MONTH ( [Date] ),
 				        "Month Year", FORMAT ( [Date], "mmm yyyy" ),
-				        "Month Index", YEAR ( [Date] ) * 12 + MONTH ( [Date] )
+				        "Month Index", YEAR ( [Date] ) * 12 + MONTH ( [Date] ),
+				        "Is Full Month", [Date] < DATE ( 2011, 12, 1 )
 				    )
 
 	annotation PBI_ResultType = Table

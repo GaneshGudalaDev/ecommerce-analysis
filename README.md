@@ -127,8 +127,9 @@ python scripts/run_sql_tests.py
 - **SQL on MySQL:** from the repo root run `mysql --local-infile=1 -u <user> -p < sql/01_create_schema.sql`, then any other file.
   `run_sql_tests.py` runs every query on the clean CSVs with DuckDB, so you can check the SQL without a database server
   (34 queries, 0 failures, and totals match pandas).
-- **Power BI:** open `powerbi/Returns_Analysis.pbip` in Power BI Desktop. Under **Transform data › Edit parameters**, set
-  `DataFolder` to your own `data\processed\` folder (ending with `\`), then **Refresh**. See [powerbi/README.md](powerbi/README.md).
+- **Power BI:** open `powerbi/Returns_Analysis.pbip` in Power BI Desktop. The `DataFolder` parameter defaults to
+  `C:\data\processed\`. Copy the CSVs there, or change it under **Transform data › Edit parameters** (ending with `\`), then
+  **Refresh**. Monthly charts leave out December 2011 because the data stops on 9 Dec. See [powerbi/README.md](powerbi/README.md).
 
 More detail: [data dictionary](docs/data_dictionary.md) · [KPI definitions](docs/kpi_definitions.md) ·
 [walkthrough: how everything works](docs/walkthrough.md)

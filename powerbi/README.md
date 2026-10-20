@@ -6,8 +6,17 @@ Saved as a **Power BI Project** (`.pbip`): the model (`.SemanticModel/`, TMDL te
 ## Open it
 1. Run `notebooks/01_data_cleaning.ipynb` first, so `data/processed/` has the CSV files.
 2. Open `Returns_Analysis.pbip` in Power BI Desktop (2024 or later).
-3. **Home › Transform data › Edit parameters** → set `DataFolder` to the full path of your `data\processed\` folder, ending with `\`.
+3. The `DataFolder` parameter defaults to `C:\data\processed\`. Either copy the CSV files there, or go to
+   **Home › Transform data › Edit parameters** and set it to the full path of your own `data\processed\` folder (ending with `\`).
 4. **Home › Refresh.**
+
+## Report settings worth knowing
+- **Tables are sorted biggest first:** products, customers and countries by returned value; the Customers page by net sales.
+  Click any column header to re-sort.
+- **Customer tables hide `Unknown`** (orders with no customer id) with a visual-level filter, so only real customers are ranked.
+- **Monthly charts leave out December 2011.** The data stops on 9 Dec 2011, so that month would look like a sudden drop.
+  The `Date` table has an `Is Full Month` column (FALSE from 1 Dec 2011), and every monthly chart has a visual-level filter
+  `Is Full Month = TRUE`. KPI cards and the other charts still include those 9 days.
 
 ## Model (star schema)
 

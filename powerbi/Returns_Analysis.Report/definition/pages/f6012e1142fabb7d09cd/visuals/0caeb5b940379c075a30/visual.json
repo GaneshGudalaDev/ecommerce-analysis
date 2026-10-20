@@ -38,11 +38,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Orders"
+                  "Property": "Net Sales"
                 }
               },
-              "queryRef": "_Measures.Orders",
-              "nativeQueryRef": "Orders"
+              "queryRef": "_Measures.Net Sales",
+              "nativeQueryRef": "Net Sales"
             },
             {
               "field": {
@@ -52,11 +52,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Net Sales"
+                  "Property": "Orders"
                 }
               },
-              "queryRef": "_Measures.Net Sales",
-              "nativeQueryRef": "Net Sales"
+              "queryRef": "_Measures.Orders",
+              "nativeQueryRef": "Orders"
             },
             {
               "field": {
@@ -88,6 +88,24 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Net Sales"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -119,7 +137,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Customers by net sales (known customers)'"
+                  "Value": "'Customers by net sales (known customers, biggest first)'"
                 }
               }
             }
@@ -127,5 +145,66 @@
         }
       ]
     }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5bf846a1a0c8ff455b39",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OrderLines"
+              }
+            },
+            "Property": "customer_id"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "t",
+              "Entity": "OrderLines",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "t"
+                              }
+                            },
+                            "Property": "customer_id"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Unknown'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
   }
 }

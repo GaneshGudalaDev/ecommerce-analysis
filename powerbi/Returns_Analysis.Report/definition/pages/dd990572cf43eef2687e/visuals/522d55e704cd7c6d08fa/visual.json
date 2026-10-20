@@ -5,7 +5,7 @@
     "x": 20,
     "y": 168,
     "z": 9000,
-    "width": 614,
+    "width": 790,
     "height": 300,
     "tabOrder": 9000
   },
@@ -89,6 +89,24 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Returned Value"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -120,7 +138,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Products by returned value'"
+                  "Value": "'Products by returned value (biggest first)'"
                 }
               }
             }

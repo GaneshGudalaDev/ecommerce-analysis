@@ -122,6 +122,14 @@ A calculated column is fixed per row.
 3. **Sales & Delivery:** net sales trend, categories, regions, and postage % of goods.
 4. **Customers:** active customers, repeat %, biggest customers.
 
+**Likely question: "Why does your monthly chart stop at November 2011?"**
+"The data ends on 9 December 2011, so December would look like a crash in sales. I added an `Is Full Month` flag to the date
+table and filtered the monthly charts to full months only. The totals still include those 9 days."
+
+**Likely question: "Why isn't 'Unknown' in your top customers table?"**
+"Those are orders with no customer id, about a fifth of sales. They're real sales, so they stay in the totals, but they aren't
+one customer, so I filter them out of the customer rankings."
+
 ---
 
 ## 5. Questions to be ready for

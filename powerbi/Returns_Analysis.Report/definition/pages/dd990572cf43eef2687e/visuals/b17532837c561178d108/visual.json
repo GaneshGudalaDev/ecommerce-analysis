@@ -5,7 +5,7 @@
     "x": 20,
     "y": 480,
     "z": 11000,
-    "width": 614,
+    "width": 790,
     "height": 228,
     "tabOrder": 11000
   },
@@ -53,20 +53,6 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Gross Sales"
-                }
-              },
-              "queryRef": "_Measures.Gross Sales",
-              "nativeQueryRef": "Gross Sales"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
                   "Property": "Returned Value"
                 }
               },
@@ -86,9 +72,41 @@
               },
               "queryRef": "_Measures.Return Rate %",
               "nativeQueryRef": "Return Rate %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Gross Sales"
+                }
+              },
+              "queryRef": "_Measures.Gross Sales",
+              "nativeQueryRef": "Gross Sales"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Returned Value"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -120,7 +138,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Countries'"
+                  "Value": "'Countries by returned value'"
                 }
               }
             }
